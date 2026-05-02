@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competencia - Lucas Elizalde</title>
+</head>
+<body>
+<style>
+.sitebar{position:sticky;top:0;z-index:1000;background:#0f1f3d;padding:.65rem 1rem;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.12)}
+.sitebar a{color:rgba(255,255,255,.76);font-family:'Inter',Arial,sans-serif;font-size:.82rem;text-decoration:none;padding:.35rem .6rem;border-radius:3px}
+.sitebar a:hover{color:#fff;background:rgba(255,255,255,.08)}
+@media(max-width:760px){.sitebar{position:relative}}
+</style>
+<nav class="sitebar">
+  <a href="../../">Inicio</a>
+  <a href="../../sobre-mi/">Sobre mí</a>
+  <a href="../../competencias/">Competencias</a>
+  <a href="../../contacto/">Contacto</a>
+</nav>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+:root {
+  --dark: #303030; 
+  --blue: #2f63d9; 
+  --navy: #0f1f3d; 
+  --cyan: #4db8e8;
+  --white: #ffffff; 
+  --soft: #f2f2f2; 
+  --border: #d9d9d9;
+  --text: #1f1f1f; 
+  --muted: #4f4f4f; 
+  --font: 'Inter', Arial, sans-serif;
+}
+
+body { 
+  font-family: var(--font); 
+  color: var(--text); 
+  background: var(--white); 
+  font-size: 15px; 
+  line-height: 1.75; 
+  margin: 0;
+}
+
+.hero { 
+  background: var(--navy); 
+  background-image: radial-gradient(ellipse at 70% 50%, rgba(30,111,168,.18) 0%, transparent 60%); 
+  padding: 4.6rem 2rem 4rem; 
+  text-align: center; 
+  border-bottom: 3px solid var(--blue); 
+}
+
+.hero h1 { 
+  color: #fff; 
+  font-size: clamp(1.6rem, 4vw, 2.45rem); 
+  font-weight: 600; 
+  letter-spacing: .05em; 
+  text-transform: uppercase; 
+  margin-bottom: .7rem; 
+}
+
+.hero-line { 
+  width: 44px; 
+  height: 2px; 
+  background: var(--cyan); 
+  margin: 0 auto .9rem; 
+}
+
+.hero p { 
+  color: rgba(255,255,255,.6); 
+  font-size: .95rem; 
+  font-weight: 300; 
+  letter-spacing: .04em; 
+}
+
+.container { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  padding: 3.5rem 2rem; 
+}
+
+.area-intro { 
+  max-width: 850px; 
+  margin: 0 auto 2.8rem; 
+}
+
+.area-intro h2 { 
+  font-size: 1.35rem; 
+  color: var(--text); 
+  margin-bottom: .8rem; 
+  font-weight: 600; 
+}
+
+.area-intro p { 
+  color: var(--muted); 
+  font-size: .96rem; 
+  line-height: 1.85; 
+}
+
+.index-box { 
+  max-width: 850px; 
+  margin: 0 auto 3.2rem; 
+  background: var(--soft); 
+  border-left: 4px solid var(--blue); 
+  padding: 1.4rem 1.6rem; 
+}
+
+.index-box h3 { 
+  font-size: 1rem; 
+  color: var(--text); 
+  margin-bottom: .9rem; 
+  font-weight: 600; 
+}
+
+.index-box ol { 
+  padding-left: 1.2rem; 
+  color: var(--muted); 
+}
+
+.index-box li { 
+  margin-bottom: .55rem; 
+}
+
+.competency-header { 
+  background: var(--dark); 
+  color: #fff; 
+  padding: 1.5rem 2rem; 
+  margin: 3.2rem -2rem 0; 
+  border-top: 3px solid var(--blue); 
+}
+
+.competency-header h2 { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  font-size: 1.08rem; 
+  font-weight: 600; 
+  line-height: 1.65; 
+}
+
+.competency-description { 
+  padding: 1.8rem 0; 
+  max-width: 950px; 
+}
+
+.competency-description p { 
+  color: var(--text); 
+  font-size: .92rem; 
+  line-height: 1.8; 
+}
+
+.evidence-bar { 
+  background: var(--soft); 
+  margin: 0 -2rem 2rem; 
+  padding: 1.1rem 2rem; 
+}
+
+.evidence-bar h3 { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  color: var(--blue); 
+  font-size: 1rem; 
+  font-weight: 600; 
+}
+
+.evidence-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: 1.3rem; 
+  margin-bottom: 2.6rem; 
+}
+
+.evidence-card { 
+  background: var(--white); 
+  border: 1px solid var(--border); 
+  border-radius: 4px; 
+  padding: 1.25rem 1.3rem; 
+  border-top: 3px solid var(--blue); 
+}
+
+.evidence-card h3 { 
+  color: var(--blue); 
+  font-size: 1.05rem; 
+  line-height: 1.35; 
+  font-weight: 600; 
+  margin-bottom: .75rem; 
+}
+
+.evidence-card p { 
+  color: var(--text); 
+  font-size: .88rem; 
+  line-height: 1.85; 
+  margin-bottom: .75rem; 
+}
+
+.evidence-link { 
+  display: inline-block; 
+  color: var(--blue); 
+  font-size: .8rem; 
+  font-weight: 500; 
+  text-decoration: underline; 
+  margin-top: .2rem; 
+}
+
+.reflection { 
+  background: var(--soft); 
+  margin: 2.5rem -2rem 0; 
+  padding: 1.7rem 2rem; 
+}
+
+.reflection-inner { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+}
+
+.reflection h3 { 
+  color: var(--blue); 
+  font-size: 1rem; 
+  font-weight: 600; 
+  margin-bottom: 1rem; 
+}
+
+.reflection p { 
+  color: var(--text); 
+  font-size: .9rem; 
+  line-height: 1.9; 
+  margin-bottom: .9rem; 
+}
+
+.back-wrap { 
+  text-align: center; 
+  margin-top: 3rem; 
+}
+
+.back-btn { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: var(--navy); 
+  color: #fff; 
+  text-decoration: none; 
+  padding: .85rem 1.4rem; 
+  border-radius: 3px; 
+  font-size: .9rem; 
+  font-weight: 500; 
+}
+
+.back-btn:hover { 
+  background: #254880; 
+}
+
+@media(max-width: 800px) {
+  .container { 
+    padding: 3rem 1.2rem; 
+  }
+
+  .competency-header, 
+  .evidence-bar, 
+  .reflection { 
+    margin-left: -1.2rem; 
+    margin-right: -1.2rem; 
+  }
+
+  .evidence-grid { 
+    grid-template-columns: 1fr; 
+  }
+}
+</style>
+
+<div class="op-page">
+
+  <header class="hero">
+    <h1>Operación de Sistemas Mecatrónicos</h1>
+    <div class="hero-line"></div>
+    <p>Portafolio de Competencias — Lucas Elizalde</p>
+  </header>
+
+  <main class="container">
+
+    <section class="area-intro">
+      <h2>Área de dominio</h2>
+      <p>
+        Esta área de dominio se relaciona con la capacidad de implementar, operar,
+        monitorear y poner en servicio sistemas mecatrónicos en contextos industriales
+        y de laboratorio. A lo largo de mi formación desarrollé esta competencia a través
+        de prácticas donde fue necesario integrar hardware y software, verificar el funcionamiento
+        de los sistemas, realizar mediciones y trabajar con criterios de operación y seguridad.
+      </p>
+    </section>
+
+    <section class="index-box">
+      <h3>Índice de competencias</h3>
+      <ol>
+        <li>Implementar software y hardware específico para el correcto desempeño de procesos.</li>
+        <li>Verificar la capacidad operacional de sistemas mecatrónicos mediante sistemas de monitoreo.</li>
+        <li>Instalar y poner en servicio sistemas mecatrónicos considerando normas de calidad, seguridad y medio ambiente.</li>
+      </ol>
+    </section>
+
+    <!-- COMPETENCIA 1 -->
+    <section>
+      <div class="competency-header">
+        <h2>1. Implementar software y hardware específico para el correcto desempeño de procesos</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia implica conectar, configurar y programar componentes de hardware y software
+          para que un sistema mecatrónico cumpla una función específica. En mi caso, se evidencia en
+          prácticas donde integré microcontroladores, sensores, actuadores, comunicación digital, interfaces
+          de usuario y sistemas físicos que debían responder ante entradas o condiciones determinadas.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Proyecto Integrador II: Robot humanoide Turi</h3>
+          <p>
+            Se diseñó un robot humanoide inspirado en NAO para apoyar recorridos turísticos dentro de la universidad.
+            El sistema integró ESP32, Arduino UNO, servomotores, ESP32-CAM, audio, aplicación móvil, servidor en Python
+            y comunicación WiFi.
+          </p>
+          <p>
+            Esta evidencia muestra la implementación de hardware y software en un sistema mecatrónico completo,
+            donde diferentes subsistemas debían operar de forma coordinada.
+          </p>
+          <a class="evidence-link" href="../../evidencias/robot-turi/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Proyecto Integrador I: Aromatizador automático</h3>
+          <p>
+            Se diseñó e implementó un aromatizador automático utilizando Arduino, circuito electrónico, display,
+            botones, LEDs, buzzer y un sistema de accionamiento.
+          </p>
+          <p>
+            Esta actividad permitió aplicar programación embebida y control de actuadores en un prototipo funcional,
+            desarrollado para resolver una necesidad concreta.
+          </p>
+          <a class="evidence-link" href="../../evidencias/aromatizador-automatico/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Comunicación SPI maestro–esclavo con ATmega328P</h3>
+          <p>
+            En esta práctica se implementó una arquitectura maestro–esclavo utilizando comunicación SPI
+            entre dos microcontroladores ATmega328P. El maestro leía sensores y enviaba tramas de control
+            al esclavo, que accionaba un LED PWM, un servomotor y un buzzer.
+          </p>
+          <p>
+            Esta actividad permitió integrar lectura de sensores, comunicación entre dispositivos y control
+            de actuadores en un sistema embebido.
+          </p>
+          <a class="evidence-link" href="../../evidencias/comunicacion-spi/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Comunicación I2C maestro–esclavo con ATmega328P</h3>
+          <p>
+            Se replicó la arquitectura de control usando I2C entre dos ATmega328P, manteniendo el sensado
+            y accionamiento del sistema, pero utilizando un bus de comunicación diferente.
+          </p>
+          <p>
+            Esta práctica permitió implementar hardware y software específico, además de comprender cómo
+            cambia la conexión y operación del sistema según el protocolo utilizado.
+          </p>
+          <a class="evidence-link" href="../../evidencias/comunicacion-i2c/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Control de animaciones en matriz RGB mediante UART</h3>
+          <p>
+            Se programó una matriz LED RGB 8x8 basada en WS2812B, permitiendo seleccionar animaciones
+            mediante comandos enviados por UART. Las animaciones se organizaron en frames y fueron ejecutadas
+            desde el microcontrolador.
+          </p>
+          <p>
+            Esta práctica evidencia la integración entre comunicación serial, visualización digital y programación
+            de sistemas embebidos.
+          </p>
+          <a class="evidence-link" href="../../evidencias/matriz-rgb-uart/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Control de movimiento en matriz RGB con MPU6050</h3>
+          <p>
+            Se implementó un sistema donde un LED se desplazaba dentro de una matriz RGB según la inclinación
+            medida por el sensor MPU6050. También se incorporó un botón para modificar el color del LED.
+          </p>
+          <p>
+            Esta práctica permitió combinar sensado inercial, control en tiempo real y retroalimentación visual.
+          </p>
+          <a class="evidence-link" href="../../evidencias/mpu6050-matriz-rgb/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Robot de mini fútbol con Bluetooth</h3>
+          <p>
+            Se desarrolló un robot móvil de mini fútbol con tracción diferencial, sensores de línea,
+            mecanismo frontal de golpeo y comunicación Bluetooth para control remoto.
+          </p>
+          <p>
+            Esta actividad integra movilidad, accionamiento, comunicación inalámbrica y operación de un sistema
+            físico con interacción directa.
+          </p>
+          <a class="evidence-link" href="../../evidencias/robot-mini-futbol/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Cerradura RFID con RC522, LCD I2C y EEPROM</h3>
+          <p>
+            Se implementó una cerradura electrónica con lector RFID RC522, pantalla LCD I2C, LEDs de estado,
+            botones de actualización/borrado y almacenamiento persistente en EEPROM.
+          </p>
+          <p>
+            El sistema permitía registrar, validar, modificar y conservar una tarjeta autorizada, integrando control
+            de acceso, memoria y comunicación con el usuario.
+          </p>
+          <a class="evidence-link" href="../../evidencias/cerradura-rfid/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Selector de color con fotocelda, servomotor y WS2812</h3>
+          <p>
+            Se desarrolló un sistema capaz de detectar colores mediante una fotocelda, orientar un servomotor SG90
+            hacia el color identificado y representar visualmente el resultado en una tira LED WS2812.
+          </p>
+          <p>
+            Esta práctica permitió integrar lectura analógica, calibración, control de posición y salida visual.
+          </p>
+          <a class="evidence-link" href="../../evidencias/selector-color/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Piano electrónico con doble buzzer</h3>
+          <p>
+            Se implementó un piano electrónico con pulsadores asociados a notas musicales, doble buzzer y selección
+            de canciones mediante comunicación UART.
+          </p>
+          <p>
+            Esta práctica permitió generar señales, trabajar con temporizadores, frecuencias y control de salida sonora
+            desde el microcontrolador.
+          </p>
+          <a class="evidence-link" href="../../evidencias/piano-electronico/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Esta competencia la desarrollé al realizar prácticas donde el software y el hardware debían funcionar
+            de forma conjunta. En varias actividades fue necesario leer sensores, procesar datos, generar señales
+            de control y accionar componentes físicos.
+          </p>
+          <p>
+            Estas experiencias me ayudaron a comprender que operar un sistema mecatrónico no consiste solo en
+            programar o conectar componentes, sino en lograr que todas las partes trabajen de manera coordinada
+            para resolver una necesidad técnica concreta.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCIA 2 -->
+    <section>
+      <div class="competency-header">
+        <h2>2. Verificar la capacidad operacional de sistemas mecatrónicos mediante sistemas de monitoreo</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia se relaciona con comprobar que un sistema funciona correctamente mediante mediciones,
+          observación de señales, monitoreo de variables, análisis de datos y comparación entre el comportamiento
+          esperado y el comportamiento real.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Motor trifásico con tablero de comando y medición eléctrica</h3>
+          <p>
+            Se trabajó con un motor trifásico de inducción y un tablero de comando y protección. Se verificó
+            el funcionamiento del arranque estrella-triángulo y se realizaron mediciones de corriente y potencia
+            eléctrica durante la operación.
+          </p>
+          <p>
+            La actividad permitió comprobar el desempeño del motor en condiciones reales y relacionar las mediciones
+            con el comportamiento del sistema.
+          </p>
+          <a class="evidence-link" href="../../evidencias/motor-trifasico-tablero/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Control térmico con LM35 y monitoreo serial</h3>
+          <p>
+            Se implementó un sistema de control de temperatura con sensor LM35, calefactor y ventilador.
+            El sistema enviaba por UART la temperatura y el estado de los actuadores.
+          </p>
+          <p>
+            Los datos podían ser graficados en Python, permitiendo observar la evolución térmica y la respuesta
+            del sistema ante distintos rangos de temperatura.
+          </p>
+          <a class="evidence-link" href="../../evidencias/control-termico-lm35/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Control de motor DC por referencia analógica</h3>
+          <p>
+            En esta práctica se comparó una referencia analógica con la posición actual de un motor DC,
+            ajustando el sentido de giro y la señal PWM según el error detectado.
+          </p>
+          <p>
+            Mediante comunicación serial se monitoreaban valores como referencia, posición, error, PWM y dirección
+            de giro, permitiendo verificar la respuesta operacional del sistema.
+          </p>
+          <a class="evidence-link" href="../../evidencias/control-motor-dc/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Medición de señales con instrumentos de laboratorio</h3>
+          <p>
+            Se utilizaron multímetro, fuente de alimentación, osciloscopio, generador de funciones y amperímetro
+            para observar señales y medir variables eléctricas.
+          </p>
+          <p>
+            Estas actividades fueron fundamentales para verificar circuitos, detectar diferencias entre valores
+            esperados y medidos, y validar el funcionamiento de sistemas electrónicos.
+          </p>
+          <a class="evidence-link" href="../../evidencias/instrumentos-laboratorio/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Pruebas de electrónica analógica con medición y simulación</h3>
+          <p>
+            En los laboratorios de electrónica analógica se trabajó con diodos, rectificadores, Zener,
+            transistores, filtros y amplificadores operacionales, realizando mediciones y comparaciones
+            con simulaciones.
+          </p>
+          <p>
+            Estas prácticas permitieron verificar la respuesta real de los circuitos y analizar señales mediante
+            instrumentos de laboratorio.
+          </p>
+          <a class="evidence-link" href="../../evidencias/electronica-analogica/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Esta competencia la desarrollé al entender que un sistema no se valida solamente porque enciende
+            o ejecuta una acción. Es necesario medir, monitorear y comparar sus variables de funcionamiento.
+          </p>
+          <p>
+            En mi vida académica esto me ayuda a trabajar con mayor criterio técnico, prestando atención a
+            los datos obtenidos y a la interpretación de resultados antes de afirmar que un sistema funciona
+            correctamente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCIA 3 -->
+    <section>
+      <div class="competency-header">
+        <h2>3. Instalar y poner en servicio sistemas mecatrónicos considerando normas de calidad, seguridad y medio ambiente</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia se vincula con la instalación, conexión, revisión y puesta en funcionamiento
+          de sistemas de forma segura y ordenada. Incluye interpretar esquemas, respetar procedimientos,
+          comprobar conexiones y verificar el sistema antes de considerarlo operativo.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Arranque estrella-triángulo de motor trifásico</h3>
+          <p>
+            Se trabajó con el arranque estrella-triángulo de un motor trifásico, verificando la actuación de
+            contactores, temporizador, protecciones y elementos de mando.
+          </p>
+          <p>
+            La actividad permitió comprender la puesta en servicio de un sistema industrial real y la importancia
+            de revisar el circuito antes de energizarlo.
+          </p>
+          <a class="evidence-link" href="../../evidencias/motor-trifasico-tablero/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Tablero de comando y protección industrial</h3>
+          <p>
+            Se inspeccionó y completó parcialmente el cableado de un tablero de comando y protección,
+            diferenciando el circuito de mando en baja tensión y el circuito de potencia trifásico.
+          </p>
+          <p>
+            Esta práctica permitió trabajar con criterios de seguridad eléctrica, relevamiento de conexiones
+            y puesta en marcha controlada del sistema.
+          </p>
+          <a class="evidence-link" href="../../evidencias/motor-trifasico-tablero/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Circuito de arranque/parada con contactor</h3>
+          <p>
+            En esta actividad se representó y trabajó con un circuito de mando para arranque y parada de motor
+            mediante contactor, pulsadores de START/STOP y contacto de retención.
+          </p>
+          <p>
+            Esta práctica permitió comprender una lógica básica pero fundamental en sistemas eléctricos industriales.
+          </p>
+          <a class="evidence-link" href="../../evidencias/arranque-parada-contactor/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Arranque secuencial y apagado de motores</h3>
+          <p>
+            Se desarrolló un esquema de mando y potencia para el arranque y apagado de motores, incorporando
+            contactores, temporizadores, protecciones, emergencia y señalización.
+          </p>
+          <p>
+            Esta actividad permitió relacionar la lógica de control con la puesta en servicio de sistemas eléctricos
+            de mayor complejidad.
+          </p>
+          <a class="evidence-link" href="../../evidencias/arranque-secuencial-motores/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Circuitos neumáticos con cilindros</h3>
+          <p>
+            En las prácticas de neumática se montaron circuitos con cilindros de simple y doble efecto,
+            válvulas, manómetros, reguladores y fuente de aire comprimido.
+          </p>
+          <p>
+            Estas actividades permitieron interpretar simbología neumática, conectar componentes y verificar
+            el funcionamiento del sistema.
+          </p>
+          <a class="evidence-link" href="../../evidencias/circuitos-neumaticos/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Circuito para apertura de silo de pienso</h3>
+          <p>
+            Se diseñó y analizó un circuito neumático/electroneumático para abrir un silo de pienso, utilizando
+            cilindros, válvulas, accionamientos y elementos de control.
+          </p>
+          <p>
+            La práctica permitió aplicar la lógica de mando neumático a una situación funcional concreta.
+          </p>
+          <a class="evidence-link" href="../../evidencias/silo-pienso/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Accionamientos eléctricos con relés y contactores</h3>
+          <p>
+            Se trabajó con relés, contactores, pulsadores, temporizadores, llave de emergencia y circuitos
+            de mando con retención.
+          </p>
+          <p>
+            Estas prácticas permitieron comprender la lógica de arranque, parada, enclavamiento y seguridad
+            en sistemas eléctricos de control.
+          </p>
+          <a class="evidence-link" href="../../evidencias/accionamientos-electricos/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Desarrollé esta competencia en actividades donde era necesario conectar, revisar y poner en marcha
+            sistemas eléctricos, neumáticos y embebidos. Estas prácticas me ayudaron a valorar el orden en el
+            cableado, la interpretación de esquemas, la revisión previa y la seguridad antes de energizar un sistema.
+          </p>
+          <p>
+            En mi formación académica, esta competencia me permite enfrentar los trabajos prácticos con mayor
+            responsabilidad, entendiendo que la puesta en servicio no solo implica que el sistema funcione, sino
+            que también debe hacerlo de forma segura, confiable y bien documentada.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="back-wrap">
+      <a class="back-btn" href="../">← Volver a Competencias</a>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
