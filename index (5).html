@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competencia - Lucas Elizalde</title>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+:root {
+  --dark: #303030; 
+  --blue: #2f63d9; 
+  --navy: #0f1f3d; 
+  --cyan: #4db8e8;
+  --white: #ffffff; 
+  --soft: #f2f2f2; 
+  --border: #d9d9d9;
+  --text: #1f1f1f; 
+  --muted: #4f4f4f; 
+  --font: 'Inter', Arial, sans-serif;
+}
+
+body { 
+  font-family: var(--font); 
+  color: var(--text); 
+  background: var(--white); 
+  font-size: 15px; 
+  line-height: 1.75; 
+  margin: 0;
+}
+
+.hero { 
+  background: var(--navy); 
+  background-image: radial-gradient(ellipse at 70% 50%, rgba(30,111,168,.18) 0%, transparent 60%); 
+  padding: 4.6rem 2rem 4rem; 
+  text-align: center; 
+  border-bottom: 3px solid var(--blue); 
+}
+
+.hero h1 { 
+  color: #fff; 
+  font-size: clamp(1.6rem, 4vw, 2.45rem); 
+  font-weight: 600; 
+  letter-spacing: .05em; 
+  text-transform: uppercase; 
+  margin-bottom: .7rem; 
+}
+
+.hero-line { 
+  width: 44px; 
+  height: 2px; 
+  background: var(--cyan); 
+  margin: 0 auto .9rem; 
+}
+
+.hero p { 
+  color: rgba(255,255,255,.6); 
+  font-size: .95rem; 
+  font-weight: 300; 
+  letter-spacing: .04em; 
+}
+
+.container { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  padding: 3.5rem 2rem; 
+}
+
+.area-intro { 
+  max-width: 850px; 
+  margin: 0 auto 2.8rem; 
+}
+
+.area-intro h2 { 
+  font-size: 1.35rem; 
+  color: var(--text); 
+  margin-bottom: .8rem; 
+  font-weight: 600; 
+}
+
+.area-intro p { 
+  color: var(--muted); 
+  font-size: .96rem; 
+  line-height: 1.85; 
+}
+
+.index-box { 
+  max-width: 850px; 
+  margin: 0 auto 3.2rem; 
+  background: var(--soft); 
+  border-left: 4px solid var(--blue); 
+  padding: 1.4rem 1.6rem; 
+}
+
+.index-box h3 { 
+  font-size: 1rem; 
+  color: var(--text); 
+  margin-bottom: .9rem; 
+  font-weight: 600; 
+}
+
+.index-box ol { 
+  padding-left: 1.2rem; 
+  color: var(--muted); 
+}
+
+.index-box li { 
+  margin-bottom: .55rem; 
+}
+
+.competency-header { 
+  background: var(--dark); 
+  color: #fff; 
+  padding: 1.5rem 2rem; 
+  margin: 3.2rem -2rem 0; 
+  border-top: 3px solid var(--blue); 
+}
+
+.competency-header h2 { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  font-size: 1.08rem; 
+  font-weight: 600; 
+  line-height: 1.65; 
+}
+
+.competency-description { 
+  padding: 1.8rem 0; 
+  max-width: 950px; 
+}
+
+.competency-description p { 
+  color: var(--text); 
+  font-size: .92rem; 
+  line-height: 1.8; 
+}
+
+.evidence-bar { 
+  background: var(--soft); 
+  margin: 0 -2rem 2rem; 
+  padding: 1.1rem 2rem; 
+}
+
+.evidence-bar h3 { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  color: var(--blue); 
+  font-size: 1rem; 
+  font-weight: 600; 
+}
+
+.evidence-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: 1.3rem; 
+  margin-bottom: 2.6rem; 
+}
+
+.evidence-card { 
+  background: var(--white); 
+  border: 1px solid var(--border); 
+  border-radius: 4px; 
+  padding: 1.25rem 1.3rem; 
+  border-top: 3px solid var(--blue); 
+}
+
+.evidence-card h3 { 
+  color: var(--blue); 
+  font-size: 1.05rem; 
+  line-height: 1.35; 
+  font-weight: 600; 
+  margin-bottom: .75rem; 
+}
+
+.evidence-card p { 
+  color: var(--text); 
+  font-size: .88rem; 
+  line-height: 1.85; 
+  margin-bottom: .75rem; 
+}
+
+.evidence-link { 
+  display: inline-block; 
+  color: var(--blue); 
+  font-size: .8rem; 
+  font-weight: 500; 
+  text-decoration: underline; 
+  margin-top: .2rem; 
+}
+
+.reflection { 
+  background: var(--soft); 
+  margin: 2.5rem -2rem 0; 
+  padding: 1.7rem 2rem; 
+}
+
+.reflection-inner { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+}
+
+.reflection h3 { 
+  color: var(--blue); 
+  font-size: 1rem; 
+  font-weight: 600; 
+  margin-bottom: 1rem; 
+}
+
+.reflection p { 
+  color: var(--text); 
+  font-size: .9rem; 
+  line-height: 1.9; 
+  margin-bottom: .9rem; 
+}
+
+.back-wrap { 
+  text-align: center; 
+  margin-top: 3rem; 
+}
+
+.back-btn { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: var(--navy); 
+  color: #fff; 
+  text-decoration: none; 
+  padding: .85rem 1.4rem; 
+  border-radius: 3px; 
+  font-size: .9rem; 
+  font-weight: 500; 
+}
+
+.back-btn:hover { 
+  background: #254880; 
+}
+
+@media(max-width: 800px) {
+  .container { 
+    padding: 3rem 1.2rem; 
+  }
+
+  .competency-header, 
+  .evidence-bar, 
+  .reflection { 
+    margin-left: -1.2rem; 
+    margin-right: -1.2rem; 
+  }
+
+  .evidence-grid { 
+    grid-template-columns: 1fr; 
+  }
+}
+</style>
+
+<div class="mant-page">
+
+  <header class="hero">
+    <h1>Mantenimiento de Sistemas Mecatrónicos</h1>
+    <div class="hero-line"></div>
+    <p>Portafolio de Competencias — Lucas Elizalde</p>
+  </header>
+
+  <main class="container">
+
+    <section class="area-intro">
+      <h2>Área de dominio</h2>
+      <p>
+        Esta área de dominio se relaciona con la ejecución de tareas de mantenimiento
+        preventivo y correctivo en sistemas mecatrónicos, siguiendo procedimientos técnicos,
+        instrucciones de trabajo y criterios de seguridad. En mi formación, esta competencia
+        se desarrolló mediante prácticas de desmontaje y montaje mecánico, inspección de
+        tableros eléctricos, accionamientos, circuitos neumáticos y verificación con instrumentos
+        de medición.
+      </p>
+    </section>
+
+    <section class="index-box">
+      <h3>Índice de competencias</h3>
+      <ol>
+        <li>Ejecutar planes de mantenimiento preventivos y correctivos diseñados por especialistas.</li>
+        <li>Aplicar procedimientos y seguir instrucciones relacionadas con metodologías de mantenimiento basado en la confiabilidad indicadas por un departamento, responsable o técnico.</li>
+      </ol>
+    </section>
+
+    <!-- COMPETENCIA 1 -->
+    <section>
+      <div class="competency-header">
+        <h2>1. Ejecutar planes de mantenimiento preventivos y correctivos diseñados por especialistas</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia implica realizar tareas prácticas de mantenimiento siguiendo una
+          planificación o consigna técnica. Incluye inspeccionar, desmontar, montar, corregir,
+          ajustar y verificar sistemas mecánicos, eléctricos o neumáticos, respetando el orden
+          de trabajo y las condiciones de seguridad necesarias.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Montaje y desmontaje del eje de transferencia y caja de cambios</h3>
+          <p>
+            En esta práctica se realizó el desmontaje y posterior montaje de un sistema mecánico,
+            aplicando una secuencia de trabajo ordenada e identificando componentes como eje,
+            engranajes, rodamientos, chaveta, anillos Seeger, tapas y tuerca de fijación.
+          </p>
+          <p>
+            La actividad permitió ejecutar una intervención mecánica completa, utilizando herramientas
+            adecuadas y verificando el funcionamiento final mediante el giro suave del eje.
+          </p>
+          <a class="evidence-link" href="../../evidencias/montaje-desmontaje-eje/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Inspección y corrección de cableado en tablero industrial</h3>
+          <p>
+            En la práctica de Aplicaciones Electroindustriales se inspeccionó un tablero de comando
+            y protección para un motor trifásico, identificando componentes, conexiones, protecciones
+            y elementos de maniobra.
+          </p>
+          <p>
+            La actividad incluyó completar parte del cableado, revisar el circuito de mando y potencia,
+            y dejar el sistema en condiciones de operación para su puesta en marcha.
+          </p>
+          <a class="evidence-link" href="../../evidencias/motor-trifasico-tablero/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Accionamientos eléctricos con relés y contactores</h3>
+          <p>
+            Se trabajó con contactores, relés, pulsadores, temporizadores, llave de emergencia
+            y circuitos de mando con retención.
+          </p>
+          <p>
+            Estas prácticas se relacionan con mantenimiento porque permiten reconocer elementos
+            de mando, verificar su funcionamiento y comprender cómo intervenir sistemas eléctricos
+            de control de forma segura.
+          </p>
+          <a class="evidence-link" href="../../evidencias/accionamientos-electricos/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Montaje y prueba de circuitos neumáticos</h3>
+          <p>
+            En las prácticas de neumática se montaron circuitos con cilindros de simple y doble
+            efecto, válvulas 3/2 y 5/2, reguladores, manómetros y fuente de aire comprimido.
+          </p>
+          <p>
+            Estas actividades permitieron ejecutar procedimientos de conexión, prueba y verificación
+            del funcionamiento de sistemas neumáticos.
+          </p>
+          <a class="evidence-link" href="../../evidencias/circuitos-neumaticos/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Arranque secuencial y apagado de motores</h3>
+          <p>
+            Se elaboró y analizó un circuito de mando y potencia para el arranque y apagado
+            de motores, incorporando contactores, temporizadores, protecciones, emergencia
+            y señalización.
+          </p>
+          <p>
+            Esta actividad permitió comprender cómo se organizan las maniobras eléctricas y cómo
+            se puede intervenir un sistema de control manteniendo criterios de seguridad.
+          </p>
+          <a class="evidence-link" href="../../evidencias/arranque-secuencial-motores/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Circuito de arranque/parada con contactor</h3>
+          <p>
+            En esta actividad se trabajó con un circuito básico de mando para arranque y parada
+            de motor mediante contactor, pulsadores de START/STOP y contacto de retención.
+          </p>
+          <p>
+            La práctica permitió ejecutar y comprender una lógica fundamental utilizada en tableros
+            de control industrial y tareas de mantenimiento eléctrico.
+          </p>
+          <a class="evidence-link" href="../../evidencias/arranque-parada-contactor/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Desarrollé esta competencia principalmente en actividades donde fue necesario intervenir
+            sistemas reales o representativos de un entorno industrial. En el montaje y desmontaje
+            mecánico aprendí la importancia de seguir una secuencia, identificar cada pieza y verificar
+            el funcionamiento final antes de dar la tarea por terminada.
+          </p>
+          <p>
+            En los trabajos eléctricos y neumáticos comprendí que el mantenimiento requiere orden,
+            interpretación de esquemas, revisión de conexiones y cuidado en la puesta en marcha.
+            Esto me ayuda a trabajar con mayor responsabilidad en laboratorios y proyectos prácticos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCIA 2 -->
+    <section>
+      <div class="competency-header">
+        <h2>2. Aplicar procedimientos y seguir instrucciones relacionadas con metodologías de mantenimiento basado en la confiabilidad</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia implica seguir procedimientos indicados por docentes, responsables
+          técnicos o consignas de trabajo, identificando componentes críticos y verificando el estado
+          del sistema. Se relaciona con la confiabilidad porque busca reducir fallas, evitar riesgos
+          y asegurar que los componentes esenciales funcionen correctamente.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Procedimiento ordenado de desmontaje mecánico</h3>
+          <p>
+            Durante el desmontaje del eje y la caja de cambios se siguió un procedimiento paso a paso,
+            utilizando herramientas específicas y registrando el orden de extracción de las piezas.
+          </p>
+          <p>
+            Esta forma de trabajo permitió conservar la trazabilidad del armado y reducir el riesgo de
+            errores durante el montaje posterior.
+          </p>
+          <a class="evidence-link" href="../../evidencias/montaje-desmontaje-eje/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Identificación de componentes críticos en el sistema mecánico</h3>
+          <p>
+            En la práctica mecánica se identificaron componentes críticos como rodamientos, engranajes,
+            eje, chaveta, anillos Seeger y tuerca de fijación.
+          </p>
+          <p>
+            Estos elementos son importantes porque afectan directamente la transmisión de movimiento,
+            la alineación, la fricción y la confiabilidad del conjunto mecánico.
+          </p>
+          <a class="evidence-link" href="../../evidencias/montaje-desmontaje-eje/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Relevamiento técnico del tablero de comando y protección</h3>
+          <p>
+            En el tablero industrial se identificaron componentes como guardamotor, fusibles,
+            interruptor diferencial, contactores, temporizador, fuente de 24 V y borneras.
+          </p>
+          <p>
+            Reconocer estos elementos permite comprender qué partes del sistema son críticas para
+            la seguridad, el arranque del motor y la continuidad de operación.
+          </p>
+          <a class="evidence-link" href="../../evidencias/motor-trifasico-tablero/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Medición de corriente y potencia en motor trifásico</h3>
+          <p>
+            En la práctica con motor trifásico se realizaron mediciones de corriente y potencia
+            durante el funcionamiento del sistema.
+          </p>
+          <p>
+            Estas mediciones permiten verificar la condición operativa del motor y detectar posibles
+            consumos anormales, sobrecargas o diferencias respecto al comportamiento esperado.
+          </p>
+          <a class="evidence-link" href="../../evidencias/motor-trifasico-tablero/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Uso de instrumentos para diagnóstico eléctrico y electrónico</h3>
+          <p>
+            En las prácticas de instrumentos se utilizó multímetro, osciloscopio, fuente de alimentación,
+            generador de funciones y amperímetro para medir señales y verificar circuitos.
+          </p>
+          <p>
+            Esta actividad aporta a la confiabilidad porque permite confirmar el estado de un sistema
+            a partir de datos medidos y no solamente por observación visual.
+          </p>
+          <a class="evidence-link" href="../../evidencias/instrumentos-laboratorio/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Identificación de fallas potenciales en circuitos neumáticos</h3>
+          <p>
+            En los circuitos neumáticos se trabajó con componentes cuyo funcionamiento influye en
+            la respuesta del sistema, como válvulas, cilindros, conexiones, reguladores y manómetros.
+          </p>
+          <p>
+            Reconocer estos elementos permite detectar posibles fallas como fugas, movimientos lentos,
+            pérdida de presión o accionamientos incorrectos.
+          </p>
+          <a class="evidence-link" href="../../evidencias/circuitos-neumaticos/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Esta competencia la desarrollé al aprender que una intervención técnica no debe hacerse
+            de forma improvisada. Seguir procedimientos, registrar pasos, identificar componentes
+            importantes y verificar el estado final del sistema permite trabajar con mayor seguridad
+            y reducir la posibilidad de fallas.
+          </p>
+          <p>
+            En mi vida académica aplico esta competencia cuando reviso un circuito, interpreto un esquema,
+            realizo mediciones o desarmo un sistema mecánico. Me ayuda a pensar no solo en que el sistema
+            funcione en el momento, sino en que pueda seguir funcionando de manera confiable.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="back-wrap">
+      <a class="back-btn" href="../">← Volver a Competencias</a>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

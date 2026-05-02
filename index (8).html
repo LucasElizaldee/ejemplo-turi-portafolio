@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competencia - Lucas Elizalde</title>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+:root {
+  --dark: #303030; 
+  --blue: #2f63d9; 
+  --navy: #0f1f3d; 
+  --cyan: #4db8e8;
+  --white: #ffffff; 
+  --soft: #f2f2f2; 
+  --border: #d9d9d9;
+  --text: #1f1f1f; 
+  --muted: #4f4f4f; 
+  --font: 'Inter', Arial, sans-serif;
+}
+
+body { 
+  font-family: var(--font); 
+  color: var(--text); 
+  background: var(--white); 
+  font-size: 15px; 
+  line-height: 1.75; 
+  margin: 0;
+}
+
+.hero { 
+  background: var(--navy); 
+  background-image: radial-gradient(ellipse at 70% 50%, rgba(30,111,168,.18) 0%, transparent 60%); 
+  padding: 4.6rem 2rem 4rem; 
+  text-align: center; 
+  border-bottom: 3px solid var(--blue); 
+}
+
+.hero h1 { 
+  color: #fff; 
+  font-size: clamp(1.6rem, 4vw, 2.45rem); 
+  font-weight: 600; 
+  letter-spacing: .05em; 
+  text-transform: uppercase; 
+  margin-bottom: .7rem; 
+}
+
+.hero-line { 
+  width: 44px; 
+  height: 2px; 
+  background: var(--cyan); 
+  margin: 0 auto .9rem; 
+}
+
+.hero p { 
+  color: rgba(255,255,255,.6); 
+  font-size: .95rem; 
+  font-weight: 300; 
+  letter-spacing: .04em; 
+}
+
+.container { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  padding: 3.5rem 2rem; 
+}
+
+.area-intro { 
+  max-width: 850px; 
+  margin: 0 auto 2.8rem; 
+}
+
+.area-intro h2 { 
+  font-size: 1.35rem; 
+  color: var(--text); 
+  margin-bottom: .8rem; 
+  font-weight: 600; 
+}
+
+.area-intro p { 
+  color: var(--muted); 
+  font-size: .96rem; 
+  line-height: 1.85; 
+}
+
+.index-box { 
+  max-width: 850px; 
+  margin: 0 auto 3.2rem; 
+  background: var(--soft); 
+  border-left: 4px solid var(--blue); 
+  padding: 1.4rem 1.6rem; 
+}
+
+.index-box h3 { 
+  font-size: 1rem; 
+  color: var(--text); 
+  margin-bottom: .9rem; 
+  font-weight: 600; 
+}
+
+.index-box ol { 
+  padding-left: 1.2rem; 
+  color: var(--muted); 
+}
+
+.index-box li { 
+  margin-bottom: .55rem; 
+}
+
+.competency-header { 
+  background: var(--dark); 
+  color: #fff; 
+  padding: 1.5rem 2rem; 
+  margin: 3.2rem -2rem 0; 
+  border-top: 3px solid var(--blue); 
+}
+
+.competency-header h2 { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  font-size: 1.08rem; 
+  font-weight: 600; 
+  line-height: 1.65; 
+}
+
+.competency-description { 
+  padding: 1.8rem 0; 
+  max-width: 950px; 
+}
+
+.competency-description p { 
+  color: var(--text); 
+  font-size: .92rem; 
+  line-height: 1.8; 
+}
+
+.evidence-bar { 
+  background: var(--soft); 
+  margin: 0 -2rem 2rem; 
+  padding: 1.1rem 2rem; 
+}
+
+.evidence-bar h3 { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  color: var(--blue); 
+  font-size: 1rem; 
+  font-weight: 600; 
+}
+
+.evidence-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: 1.3rem; 
+  margin-bottom: 2.6rem; 
+}
+
+.evidence-card { 
+  background: var(--white); 
+  border: 1px solid var(--border); 
+  border-radius: 4px; 
+  padding: 1.25rem 1.3rem; 
+  border-top: 3px solid var(--blue); 
+}
+
+.evidence-card h3 { 
+  color: var(--blue); 
+  font-size: 1.05rem; 
+  line-height: 1.35; 
+  font-weight: 600; 
+  margin-bottom: .75rem; 
+}
+
+.evidence-card p { 
+  color: var(--text); 
+  font-size: .88rem; 
+  line-height: 1.85; 
+  margin-bottom: .75rem; 
+}
+
+.evidence-link { 
+  display: inline-block; 
+  color: var(--blue); 
+  font-size: .8rem; 
+  font-weight: 500; 
+  text-decoration: underline; 
+  margin-top: .2rem; 
+}
+
+.reflection { 
+  background: var(--soft); 
+  margin: 2.5rem -2rem 0; 
+  padding: 1.7rem 2rem; 
+}
+
+.reflection-inner { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+}
+
+.reflection h3 { 
+  color: var(--blue); 
+  font-size: 1rem; 
+  font-weight: 600; 
+  margin-bottom: 1rem; 
+}
+
+.reflection p { 
+  color: var(--text); 
+  font-size: .9rem; 
+  line-height: 1.9; 
+  margin-bottom: .9rem; 
+}
+
+.back-wrap { 
+  text-align: center; 
+  margin-top: 3rem; 
+}
+
+.back-btn { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: var(--navy); 
+  color: #fff; 
+  text-decoration: none; 
+  padding: .85rem 1.4rem; 
+  border-radius: 3px; 
+  font-size: .9rem; 
+  font-weight: 500; 
+}
+
+.back-btn:hover { 
+  background: #254880; 
+}
+
+@media(max-width: 800px) {
+  .container { 
+    padding: 3rem 1.2rem; 
+  }
+
+  .competency-header, 
+  .evidence-bar, 
+  .reflection { 
+    margin-left: -1.2rem; 
+    margin-right: -1.2rem; 
+  }
+
+  .evidence-grid { 
+    grid-template-columns: 1fr; 
+  }
+}
+</style>
+
+<div class="innovacion-page">
+
+  <header class="hero">
+    <h1>Innovación e Investigación en Sistemas Mecatrónicos</h1>
+    <div class="hero-line"></div>
+    <p>Portafolio de Competencias — Lucas Elizalde</p>
+  </header>
+
+  <main class="container">
+
+    <section class="area-intro">
+      <h2>Área de dominio</h2>
+      <p>
+        Esta área de dominio se relaciona con la capacidad de reconocer tecnologías tradicionales
+        e innovadoras, fabricar prototipos y colaborar en la integración de nuevas tecnologías dentro
+        de sistemas mecatrónicos. En mi formación, esta competencia se desarrolló principalmente
+        mediante proyectos integradores, prácticas de sistemas embebidos, prototipos físicos,
+        procesamiento de señales y ensayos funcionales.
+      </p>
+    </section>
+
+    <section class="index-box">
+      <h3>Índice de competencias</h3>
+      <ol>
+        <li>Reconocer paradigmas tecnológicos tradicionales e innovadores presentes en una infraestructura o equipamiento industrial, con el propósito de optimizar sistemas y procesos mecatrónicos.</li>
+        <li>Fabricar prototipos para sistemas y procesos mecatrónicos.</li>
+        <li>Colaborar en la integración de nuevas tecnologías a los sistemas mecatrónicos realizando pruebas y ensayos.</li>
+      </ol>
+    </section>
+
+    <!-- COMPETENCIA 1 -->
+    <section>
+      <div class="competency-header">
+        <h2>1. Reconocer paradigmas tecnológicos tradicionales e innovadores presentes en una infraestructura o equipamiento industrial</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia implica identificar y comparar tecnologías tradicionales e innovadoras
+          dentro de sistemas mecatrónicos, entendiendo qué función cumplen y cómo pueden aportar
+          a la mejora u optimización de un proceso. En mi caso, se evidencia al trabajar tanto con
+          tecnologías industriales clásicas, como contactores y tableros, como con sistemas embebidos,
+          comunicación inalámbrica, visión, audio digital e interfaces móviles.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Proyecto Integrador II: Robot humanoide Turi</h3>
+          <p>
+            En este proyecto se trabajó con tecnologías actuales aplicadas a robótica educativa e interacción
+            humano-máquina, integrando ESP32, Arduino UNO, servomotores, cámara, audio, aplicación móvil,
+            servidor en Python y comunicación WiFi.
+          </p>
+          <p>
+            Esta evidencia permite reconocer paradigmas innovadores vinculados a robótica, sistemas embebidos,
+            interfaces móviles, comunicación inalámbrica y automatización interactiva.
+          </p>
+          <a class="evidence-link" href="../../evidencias/robot-turi/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>AEI: Tablero industrial y arranque estrella-triángulo</h3>
+          <p>
+            En esta práctica se trabajó con tecnologías industriales tradicionales como motor trifásico,
+            contactores, guardamotor, fusibles, interruptor diferencial, temporizador y tablero de comando
+            y protección.
+          </p>
+          <p>
+            Esta actividad permitió reconocer el funcionamiento de equipamiento industrial clásico,
+            utilizado en sistemas de accionamiento y control de motores.
+          </p>
+          <a class="evidence-link" href="../../evidencias/motor-trifasico-tablero/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Comunicación SPI, I2C, UART y Bluetooth en sistemas embebidos</h3>
+          <p>
+            En las prácticas de microprocesadores se trabajó con distintos protocolos de comunicación
+            para conectar microcontroladores, sensores, matrices LED, actuadores y módulos inalámbricos.
+          </p>
+          <p>
+            Estas tecnologías representan paradigmas modernos de integración en sistemas mecatrónicos,
+            donde distintos dispositivos intercambian información para operar de forma coordinada.
+          </p>
+          <a class="evidence-link" href="../../evidencias/comunicaciones-sistemas-embebidos/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Mezclador de audio digital en Python</h3>
+          <p>
+            Se desarrolló un sistema de mezcla de señales WAV con control de amplitud, filtros paso alto
+            y paso bajo, análisis en tiempo y frecuencia, espectros, Bode e interfaz gráfica en Tkinter.
+          </p>
+          <p>
+            Esta actividad permitió reconocer el uso de herramientas de software y procesamiento digital
+            de señales como parte de soluciones técnicas aplicadas.
+          </p>
+          <a class="evidence-link" href="../../evidencias/mezclador-audio-digital/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Desarrollé esta competencia al trabajar con tecnologías muy distintas entre sí. Por un lado,
+            prácticas industriales tradicionales, como tableros, motores trifásicos y accionamientos; y por otro,
+            sistemas más actuales, como robots, comunicación inalámbrica, sensores inteligentes y procesamiento
+            digital de señales.
+          </p>
+          <p>
+            Esto me ayudó a entender que innovar no significa abandonar lo tradicional, sino saber reconocer
+            qué tecnología conviene usar según el problema, el contexto y el nivel de complejidad del sistema.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCIA 2 -->
+    <section>
+      <div class="competency-header">
+        <h2>2. Fabricar prototipos para sistemas y procesos mecatrónicos</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia implica construir prototipos físicos o funcionales que permitan probar una idea,
+          validar una solución o representar un sistema antes de una implementación final. Incluye diseño,
+          fabricación, montaje, programación, integración y prueba de funcionamiento.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Proyecto Integrador II: Prototipo del robot humanoide Turi</h3>
+          <p>
+            Se fabricó un prototipo de robot humanoide con piezas diseñadas en CAD e impresión 3D,
+            estructura física, servomotores, electrónica de control, cámara, audio, aplicación móvil y servidor.
+          </p>
+          <p>
+            El prototipo permitió validar la integración de movimiento, comunicación, interacción y estructura
+            en un sistema mecatrónico completo.
+          </p>
+          <a class="evidence-link" href="../../evidencias/robot-turi/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Proyecto Integrador I: Prototipo de aromatizador automático</h3>
+          <p>
+            Se fabricó un prototipo funcional de aromatizador automático con Arduino, display, botones,
+            LEDs, buzzer, circuito electrónico, estructura física y sistema de accionamiento.
+          </p>
+          <p>
+            Esta actividad permitió pasar desde una necesidad inicial hasta un prototipo construido,
+            probado y documentado.
+          </p>
+          <a class="evidence-link" href="../../evidencias/aromatizador-automatico/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Robot de mini fútbol con Bluetooth</h3>
+          <p>
+            Se construyó un robot móvil con tracción diferencial, sensores de línea, mecanismo frontal de golpeo
+            y control remoto mediante Bluetooth.
+          </p>
+          <p>
+            Este prototipo permitió validar movilidad, control de motores, comunicación inalámbrica e interacción
+            con un sistema físico.
+          </p>
+          <a class="evidence-link" href="../../evidencias/robot-mini-futbol/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Cerradura RFID con RC522, LCD I2C y EEPROM</h3>
+          <p>
+            Se implementó un prototipo de control de acceso con lector RFID, pantalla LCD, LEDs, botones de
+            gestión y memoria EEPROM.
+          </p>
+          <p>
+            El sistema permitió validar una solución de seguridad electrónica con registro, lectura y conservación
+            de datos de acceso.
+          </p>
+          <a class="evidence-link" href="../../evidencias/cerradura-rfid/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Selector de color con fotocelda, servomotor y LEDs WS2812</h3>
+          <p>
+            Se fabricó un prototipo capaz de detectar colores, mover un servomotor a una posición asociada
+            y mostrar el resultado mediante LEDs direccionables.
+          </p>
+          <p>
+            Esta práctica permitió validar un sistema interactivo que integra sensado, actuación y visualización.
+          </p>
+          <a class="evidence-link" href="../../evidencias/selector-color/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Mezclador de audio digital</h3>
+          <p>
+            Se desarrolló un prototipo de software para mezclar tres señales de audio, aplicar filtros,
+            modificar amplitudes y visualizar resultados en tiempo y frecuencia.
+          </p>
+          <p>
+            Aunque no es un prototipo físico, representa un prototipo funcional de procesamiento digital
+            aplicado a señales.
+          </p>
+          <a class="evidence-link" href="../../evidencias/mezclador-audio-digital/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Desarrollé esta competencia al fabricar prototipos que no quedaron solamente en una idea o diseño,
+            sino que fueron construidos, programados y probados. En los proyectos integradores esto fue especialmente
+            claro, porque hubo que resolver problemas de estructura, electrónica, programación y funcionamiento real.
+          </p>
+          <p>
+            En mi vida académica, esta competencia me permite entender que un prototipo no tiene que ser perfecto,
+            pero sí debe servir para probar una solución, detectar errores y orientar mejoras.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCIA 3 -->
+    <section>
+      <div class="competency-header">
+        <h2>3. Colaborar en la integración de nuevas tecnologías a los sistemas mecatrónicos realizando pruebas y ensayos</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia implica participar en la integración de tecnologías dentro de un sistema,
+          realizando pruebas, ensayos y ajustes para comprobar que los componentes funcionen correctamente
+          en conjunto. Se relaciona con validar sensores, actuadores, comunicación, interfaces y software
+          antes de considerar completo el sistema.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Integración de subsistemas en el robot Turi</h3>
+          <p>
+            En el Proyecto Integrador II se integraron subsistemas de movimiento, audio, cámara,
+            comunicación WiFi, aplicación móvil, servidor en Python y estructura física.
+          </p>
+          <p>
+            La integración requirió realizar pruebas parciales y ensayos para verificar que cada parte
+            funcionara correctamente dentro del conjunto.
+          </p>
+          <a class="evidence-link" href="../../evidencias/robot-turi/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Pruebas de comunicación SPI e I2C entre microcontroladores</h3>
+          <p>
+            Se implementaron y compararon sistemas maestro–esclavo utilizando SPI e I2C entre
+            microcontroladores ATmega328P.
+          </p>
+          <p>
+            Estas pruebas permitieron comprobar la comunicación entre dispositivos y validar el accionamiento
+            de salidas a partir de datos recibidos.
+          </p>
+          <a class="evidence-link" href="../../evidencias/comunicaciones-sistemas-embebidos/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Ensayos con MPU6050 y matriz RGB</h3>
+          <p>
+            Se integró un sensor MPU6050 con una matriz RGB para mover un LED en función de la inclinación
+            medida por el sensor.
+          </p>
+          <p>
+            La práctica permitió ensayar la respuesta del sistema frente a cambios físicos y validar
+            la interacción entre sensado, procesamiento y salida visual.
+          </p>
+          <a class="evidence-link" href="../../evidencias/mpu6050-matriz-rgb/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Ensayos de control térmico con LM35</h3>
+          <p>
+            Se integró un sensor de temperatura LM35 con un sistema de calefacción, ventilación y monitoreo serial.
+          </p>
+          <p>
+            Las pruebas permitieron observar la evolución de la temperatura y validar la respuesta del sistema
+            ante distintos rangos de funcionamiento.
+          </p>
+          <a class="evidence-link" href="../../evidencias/control-termico-lm35/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Pruebas del sistema RFID con memoria EEPROM</h3>
+          <p>
+            En la cerradura RFID se realizaron pruebas de lectura de tarjeta, almacenamiento en EEPROM,
+            actualización, borrado y validación de acceso.
+          </p>
+          <p>
+            Estas pruebas permitieron verificar la integración entre lector RFID, memoria, pantalla,
+            botones y lógica de control.
+          </p>
+          <a class="evidence-link" href="../../evidencias/cerradura-rfid/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Ensayos del mezclador de audio digital</h3>
+          <p>
+            En el mezclador de audio se realizaron pruebas con distintas señales WAV, variaciones de amplitud,
+            filtros paso alto y paso bajo, y visualización en tiempo y frecuencia.
+          </p>
+          <p>
+            Estos ensayos permitieron validar el comportamiento del procesamiento digital implementado
+            en Python.
+          </p>
+          <a class="evidence-link" href="../../evidencias/mezclador-audio-digital/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Desarrollé esta competencia al participar en proyectos donde cada tecnología debía probarse
+            antes de integrarse al sistema final. Aprendí que una pieza puede funcionar sola, pero fallar
+            cuando se combina con otras si no se realizan pruebas progresivas.
+          </p>
+          <p>
+            En mi vida académica aplico esta competencia dividiendo los proyectos en subsistemas,
+            realizando ensayos parciales, corrigiendo errores y recién después integrando el conjunto.
+            Esto me ayuda a trabajar con más orden y a reducir problemas en la etapa final de montaje.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="back-wrap">
+      <a class="back-btn" href="../">← Volver a Competencias</a>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competencia - Lucas Elizalde</title>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+:root {
+  --dark: #303030; 
+  --blue: #2f63d9; 
+  --navy: #0f1f3d; 
+  --cyan: #4db8e8;
+  --white: #ffffff; 
+  --soft: #f2f2f2; 
+  --border: #d9d9d9;
+  --text: #1f1f1f; 
+  --muted: #4f4f4f; 
+  --font: 'Inter', Arial, sans-serif;
+}
+
+body { 
+  font-family: var(--font); 
+  color: var(--text); 
+  background: var(--white); 
+  font-size: 15px; 
+  line-height: 1.75; 
+  margin: 0;
+}
+
+.hero { 
+  background: var(--navy); 
+  background-image: radial-gradient(ellipse at 70% 50%, rgba(30,111,168,.18) 0%, transparent 60%); 
+  padding: 4.6rem 2rem 4rem; 
+  text-align: center; 
+  border-bottom: 3px solid var(--blue); 
+}
+
+.hero h1 { 
+  color: #fff; 
+  font-size: clamp(1.6rem, 4vw, 2.45rem); 
+  font-weight: 600; 
+  letter-spacing: .05em; 
+  text-transform: uppercase; 
+  margin-bottom: .7rem; 
+}
+
+.hero-line { 
+  width: 44px; 
+  height: 2px; 
+  background: var(--cyan); 
+  margin: 0 auto .9rem; 
+}
+
+.hero p { 
+  color: rgba(255,255,255,.6); 
+  font-size: .95rem; 
+  font-weight: 300; 
+  letter-spacing: .04em; 
+}
+
+.container { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  padding: 3.5rem 2rem; 
+}
+
+.area-intro { 
+  max-width: 850px; 
+  margin: 0 auto 2.8rem; 
+}
+
+.area-intro h2 { 
+  font-size: 1.35rem; 
+  color: var(--text); 
+  margin-bottom: .8rem; 
+  font-weight: 600; 
+}
+
+.area-intro p { 
+  color: var(--muted); 
+  font-size: .96rem; 
+  line-height: 1.85; 
+}
+
+.index-box { 
+  max-width: 850px; 
+  margin: 0 auto 3.2rem; 
+  background: var(--soft); 
+  border-left: 4px solid var(--blue); 
+  padding: 1.4rem 1.6rem; 
+}
+
+.index-box h3 { 
+  font-size: 1rem; 
+  color: var(--text); 
+  margin-bottom: .9rem; 
+  font-weight: 600; 
+}
+
+.index-box ol { 
+  padding-left: 1.2rem; 
+  color: var(--muted); 
+}
+
+.index-box li { 
+  margin-bottom: .55rem; 
+}
+
+.competency-header { 
+  background: var(--dark); 
+  color: #fff; 
+  padding: 1.5rem 2rem; 
+  margin: 3.2rem -2rem 0; 
+  border-top: 3px solid var(--blue); 
+}
+
+.competency-header h2 { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  font-size: 1.08rem; 
+  font-weight: 600; 
+  line-height: 1.65; 
+}
+
+.competency-description { 
+  padding: 1.8rem 0; 
+  max-width: 950px; 
+}
+
+.competency-description p { 
+  color: var(--text); 
+  font-size: .92rem; 
+  line-height: 1.8; 
+}
+
+.evidence-bar { 
+  background: var(--soft); 
+  margin: 0 -2rem 2rem; 
+  padding: 1.1rem 2rem; 
+}
+
+.evidence-bar h3 { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+  color: var(--blue); 
+  font-size: 1rem; 
+  font-weight: 600; 
+}
+
+.evidence-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  gap: 1.3rem; 
+  margin-bottom: 2.6rem; 
+}
+
+.evidence-card { 
+  background: var(--white); 
+  border: 1px solid var(--border); 
+  border-radius: 4px; 
+  padding: 1.25rem 1.3rem; 
+  border-top: 3px solid var(--blue); 
+}
+
+.evidence-card h3 { 
+  color: var(--blue); 
+  font-size: 1.05rem; 
+  line-height: 1.35; 
+  font-weight: 600; 
+  margin-bottom: .75rem; 
+}
+
+.evidence-card p { 
+  color: var(--text); 
+  font-size: .88rem; 
+  line-height: 1.85; 
+  margin-bottom: .75rem; 
+}
+
+.evidence-link { 
+  display: inline-block; 
+  color: var(--blue); 
+  font-size: .8rem; 
+  font-weight: 500; 
+  text-decoration: underline; 
+  margin-top: .2rem; 
+}
+
+.reflection { 
+  background: var(--soft); 
+  margin: 2.5rem -2rem 0; 
+  padding: 1.7rem 2rem; 
+}
+
+.reflection-inner { 
+  max-width: 1080px; 
+  margin: 0 auto; 
+}
+
+.reflection h3 { 
+  color: var(--blue); 
+  font-size: 1rem; 
+  font-weight: 600; 
+  margin-bottom: 1rem; 
+}
+
+.reflection p { 
+  color: var(--text); 
+  font-size: .9rem; 
+  line-height: 1.9; 
+  margin-bottom: .9rem; 
+}
+
+.back-wrap { 
+  text-align: center; 
+  margin-top: 3rem; 
+}
+
+.back-btn { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: var(--navy); 
+  color: #fff; 
+  text-decoration: none; 
+  padding: .85rem 1.4rem; 
+  border-radius: 3px; 
+  font-size: .9rem; 
+  font-weight: 500; 
+}
+
+.back-btn:hover { 
+  background: #254880; 
+}
+
+@media(max-width: 800px) {
+  .container { 
+    padding: 3rem 1.2rem; 
+  }
+
+  .competency-header, 
+  .evidence-bar, 
+  .reflection { 
+    margin-left: -1.2rem; 
+    margin-right: -1.2rem; 
+  }
+
+  .evidence-grid { 
+    grid-template-columns: 1fr; 
+  }
+}
+</style>
+
+<div class="diseno-page">
+
+  <header class="hero">
+    <h1>Diseño de Sistemas Mecatrónicos</h1>
+    <div class="hero-line"></div>
+    <p>Portafolio de Competencias — Lucas Elizalde</p>
+  </header>
+
+  <main class="container">
+
+    <section class="area-intro">
+      <h2>Área de dominio</h2>
+      <p>
+        Esta área de dominio se relaciona con la capacidad de fabricar, integrar y documentar
+        sistemas mecatrónicos a partir de un diseño previo. En mi formación, esta competencia
+        se desarrolló mediante proyectos y prácticas donde fue necesario pasar de una consigna
+        o necesidad a una solución funcional, integrando mecánica, electrónica, programación,
+        sensores, actuadores, simulaciones, montaje físico y validación.
+      </p>
+    </section>
+
+    <section class="index-box">
+      <h3>Índice de competencias</h3>
+      <ol>
+        <li>Fabricar equipos, sistemas y procesos mecatrónicos de acuerdo con diseño.</li>
+        <li>Incorporar tecnologías ya evaluadas a sistemas y procesos mecatrónicos.</li>
+        <li>Generar insumos de procesos existentes para el diseño o rediseño de un sistema.</li>
+      </ol>
+    </section>
+
+    <!-- COMPETENCIA 1 -->
+    <section>
+      <div class="competency-header">
+        <h2>1. Fabricar equipos, sistemas y procesos mecatrónicos de acuerdo con diseño</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia implica construir o implementar sistemas mecatrónicos respetando
+          un diseño previo. Incluye fabricar piezas, montar circuitos, integrar actuadores,
+          programar el control y verificar que el sistema final responda a la función para la
+          cual fue diseñado.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Proyecto Integrador II: Robot humanoide Turi</h3>
+          <p>
+            Se diseñó y construyó un robot humanoide inspirado en NAO para apoyar recorridos
+            turísticos dentro de la universidad. El sistema incluyó diseño CAD, fabricación de
+            piezas en impresión 3D, armado de estructura, integración electrónica, servomotores,
+            cámara, audio, aplicación móvil y servidor en Python.
+          </p>
+          <p>
+            Esta evidencia representa uno de los trabajos más completos de diseño, fabricación
+            e integración de un sistema mecatrónico funcional.
+          </p>
+          <a class="evidence-link" href="../../evidencias/robot-turi/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Proyecto Integrador I: Aromatizador automático</h3>
+          <p>
+            Se desarrolló un aromatizador automático partiendo de una necesidad concreta.
+            El trabajo incluyó diseño del prototipo, selección de componentes, circuito electrónico,
+            programación con Arduino, estructura física, interfaz de usuario y pruebas funcionales.
+          </p>
+          <p>
+            Esta actividad permitió fabricar un equipo mecatrónico completo de acuerdo con un diseño
+            previamente planteado y validado.
+          </p>
+          <a class="evidence-link" href="../../evidencias/aromatizador-automatico/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Robot de mini fútbol con Bluetooth</h3>
+          <p>
+            Se fabricó un robot móvil con tracción diferencial, sensores de línea, mecanismo frontal
+            de golpeo y control remoto mediante Bluetooth.
+          </p>
+          <p>
+            La práctica permitió integrar estructura, movimiento, control de motores, comunicación
+            inalámbrica y operación de un sistema físico diseñado para una tarea específica.
+          </p>
+          <a class="evidence-link" href="../../evidencias/robot-mini-futbol/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Control de plotter físico con ATmega328P</h3>
+          <p>
+            Se implementó un sistema de control para un plotter físico, utilizando el ATmega328P
+            para gestionar movimientos y ejecutar acciones de acuerdo con comandos o secuencias
+            previamente definidas.
+          </p>
+          <p>
+            Esta práctica permitió trabajar sobre un sistema mecatrónico real que combina movimiento,
+            electrónica de control y programación embebida.
+          </p>
+          <a class="evidence-link" href="../../evidencias/plotter-atmega328p/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Cerradura RFID con RC522, LCD I2C y EEPROM</h3>
+          <p>
+            Se diseñó e implementó una cerradura electrónica con lector RFID, pantalla LCD,
+            LEDs de estado, botones de actualización/borrado y almacenamiento en EEPROM.
+          </p>
+          <p>
+            El sistema permitió construir una solución funcional de control de acceso, integrando
+            hardware, software, interfaz de usuario y memoria persistente.
+          </p>
+          <a class="evidence-link" href="../../evidencias/cerradura-rfid/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Motor paso a paso, seguidor de línea y candado digital</h3>
+          <p>
+            En electrónica digital se desarrollaron sistemas como control de motor paso a paso,
+            seguidor de línea y candado digital mediante lógica secuencial y combinacional.
+          </p>
+          <p>
+            Estas prácticas permitieron fabricar e implementar sistemas de control digital de acuerdo
+            con diseños lógicos previamente simplificados y simulados.
+          </p>
+          <a class="evidence-link" href="../../evidencias/electronica-digital/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Desarrollé esta competencia al realizar proyectos donde no alcanzaba con proponer una idea,
+            sino que era necesario construirla, integrarla y verificarla. En los proyectos integradores
+            pude experimentar el proceso completo de diseño: pensar una solución, seleccionar componentes,
+            construir el prototipo y probar su funcionamiento.
+          </p>
+          <p>
+            En mi vida académica, esta competencia me ayuda a transformar una consigna o problema en
+            una solución física concreta, entendiendo que el diseño debe poder materializarse y funcionar
+            en condiciones reales o de laboratorio.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCIA 2 -->
+    <section>
+      <div class="competency-header">
+        <h2>2. Incorporar tecnologías ya evaluadas a sistemas y procesos mecatrónicos</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia se relaciona con integrar tecnologías previamente analizadas o seleccionadas
+          dentro de un sistema mecatrónico. No se trata solamente de usar componentes, sino de incorporarlos
+          de forma coherente dentro del diseño para que aporten una función concreta al sistema final.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Integración tecnológica en el robot humanoide Turi</h3>
+          <p>
+            En el Proyecto Integrador II se incorporaron tecnologías como ESP32, Arduino UNO,
+            servomotores Dynamixel y MG996R, ESP32-CAM, pantalla, audio digital, servidor en Python,
+            aplicación móvil, WiFi y funciones de interacción.
+          </p>
+          <p>
+            Cada tecnología fue integrada con una función específica dentro del robot: movimiento,
+            comunicación, interfaz, percepción, audio o control.
+          </p>
+          <a class="evidence-link" href="../../evidencias/robot-turi/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Integración de Arduino, interfaz y accionamiento en el aromatizador</h3>
+          <p>
+            En el Proyecto Integrador I se incorporaron tecnologías como Arduino, display, botones,
+            LEDs, buzzer, electrónica de control y sistema de accionamiento para construir un
+            dispositivo funcional.
+          </p>
+          <p>
+            La integración de estos elementos permitió que el usuario interactuara con el sistema
+            y que el prototipo ejecutara automáticamente su función principal.
+          </p>
+          <a class="evidence-link" href="../../evidencias/aromatizador-automatico/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Comunicación SPI, I2C y UART en sistemas embebidos</h3>
+          <p>
+            Se incorporaron distintos protocolos de comunicación en prácticas con ATmega328P,
+            permitiendo conectar microcontroladores, sensores, matrices LED, pantallas y otros
+            dispositivos.
+          </p>
+          <p>
+            Estas prácticas permitieron aplicar tecnologías de comunicación digital dentro de sistemas
+            mecatrónicos reales o simulados.
+          </p>
+          <a class="evidence-link" href="../../evidencias/comunicaciones-sistemas-embebidos/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Selector de color con fotocelda, servomotor y WS2812</h3>
+          <p>
+            Se incorporaron tecnologías de sensado, actuación y visualización para detectar colores,
+            mover un servomotor hacia una posición asociada y representar el resultado mediante LEDs
+            WS2812.
+          </p>
+          <p>
+            Esta práctica evidencia la incorporación de tecnologías evaluadas dentro de un sistema
+            interactivo de baja escala.
+          </p>
+          <a class="evidence-link" href="../../evidencias/selector-color/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Cerradura electrónica con teclado, LCD y EEPROM</h3>
+          <p>
+            Se integró un teclado matricial, una pantalla LCD y memoria EEPROM para implementar
+            una cerradura electrónica con almacenamiento persistente de clave.
+          </p>
+          <p>
+            Esta actividad permitió incorporar tecnologías de entrada, salida y memoria en un sistema
+            de control de acceso.
+          </p>
+          <a class="evidence-link" href="../../evidencias/cerradura-teclado/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Mezclador de audio digital en Python</h3>
+          <p>
+            Se desarrolló un mezclador de audio digital con Python, control de amplitud, filtros paso alto
+            y paso bajo, visualización en tiempo y frecuencia, y una interfaz gráfica.
+          </p>
+          <p>
+            Aunque es un sistema principalmente de software, evidencia la incorporación de tecnologías
+            de procesamiento de señales y visualización técnica en una solución funcional.
+          </p>
+          <a class="evidence-link" href="../../evidencias/mezclador-audio-digital/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Esta competencia la desarrollé al integrar componentes y tecnologías que debían cumplir
+            una función específica dentro de cada sistema. En varios proyectos fue necesario probar
+            módulos, comprender sus conexiones, revisar librerías y adaptar el código para que la
+            tecnología realmente aportara al funcionamiento del conjunto.
+          </p>
+          <p>
+            En mi vida académica, esta competencia me permite no usar componentes al azar, sino pensar
+            qué tecnología conviene incorporar, qué problema resuelve y cómo se integra con el resto
+            del sistema.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCIA 3 -->
+    <section>
+      <div class="competency-header">
+        <h2>3. Generar insumos de procesos existentes para el diseño o rediseño de un sistema</h2>
+      </div>
+
+      <div class="competency-description">
+        <p>
+          Esta competencia implica generar información útil para diseñar, mejorar o rediseñar un sistema.
+          Los insumos pueden ser mediciones, diagramas, simulaciones, registros de prueba, modelos CAD,
+          análisis de funcionamiento, matrices de selección, resultados experimentales o documentación técnica.
+        </p>
+      </div>
+
+      <div class="evidence-bar">
+        <h3>Evidencias</h3>
+      </div>
+
+      <div class="evidence-grid">
+
+        <div class="evidence-card">
+          <h3>Matrices de selección y criterios de diseño del robot Turi</h3>
+          <p>
+            En el Proyecto Integrador II se utilizaron matrices de selección para comparar alternativas
+            de control, comunicación, materiales, actuación, base electrónica y sonido.
+          </p>
+          <p>
+            Estas matrices generaron insumos para justificar decisiones de diseño y orientar la construcción
+            final del robot.
+          </p>
+          <a class="evidence-link" href="../../evidencias/robot-turi/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Diseño CAD, planos y diagramas de bloques</h3>
+          <p>
+            En los proyectos integradores se realizaron bocetos, modelos CAD, diagramas de bloques,
+            esquemas eléctricos, planificación de tareas y documentación de subsistemas.
+          </p>
+          <p>
+            Estos elementos funcionan como insumos técnicos para fabricar, modificar o rediseñar partes
+            del sistema.
+          </p>
+          <a class="evidence-link" href="../../evidencias/diseno-cad-planos/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Circuito original y circuito corregido del tablero industrial</h3>
+          <p>
+            En la práctica de Aplicaciones Electroindustriales se relevó el circuito original del tablero
+            y luego se documentó una versión corregida con protecciones, temporizador y señalización.
+          </p>
+          <p>
+            Este relevamiento generó información útil para comprender el sistema existente y proponer
+            mejoras en su conexión y funcionamiento.
+          </p>
+          <a class="evidence-link" href="../../evidencias/motor-trifasico-tablero/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Simulación, medición y comparación en electrónica analógica</h3>
+          <p>
+            En electrónica analógica se trabajó con simulaciones, cálculos teóricos y mediciones reales
+            en circuitos con diodos, transistores, filtros y amplificadores operacionales.
+          </p>
+          <p>
+            La comparación entre teoría, simulación y práctica permitió generar información para validar
+            o ajustar diseños electrónicos.
+          </p>
+          <a class="evidence-link" href="../../evidencias/electronica-analogica/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Mapas de Karnaugh, tablas y simulaciones en electrónica digital</h3>
+          <p>
+            En electrónica digital se elaboraron tablas de verdad, simplificaciones mediante mapas de
+            Karnaugh, simulaciones y montajes físicos de circuitos combinacionales y secuenciales.
+          </p>
+          <p>
+            Estos insumos permitieron pasar desde un problema lógico hasta una implementación física
+            o simulada del sistema.
+          </p>
+          <a class="evidence-link" href="../../evidencias/electronica-digital/">Ver evidencia</a>
+        </div>
+
+        <div class="evidence-card">
+          <h3>Monitoreo serial y gráficas en Python para ajuste de sistemas</h3>
+          <p>
+            En prácticas de microprocesadores se utilizaron datos enviados por comunicación serial y
+            gráficas en Python para observar variables como temperatura, referencia, posición, error
+            y señal PWM.
+          </p>
+          <p>
+            Estos datos funcionaron como insumos para verificar el comportamiento del sistema y plantear
+            posibles ajustes o mejoras.
+          </p>
+          <a class="evidence-link" href="../../evidencias/monitoreo-python/">Ver evidencia</a>
+        </div>
+
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-inner">
+          <h3>¿Cómo desarrollé y cómo aplico esta competencia en mi vida académica?</h3>
+          <p>
+            Desarrollé esta competencia al entender que diseñar no es solamente construir, sino también
+            generar información previa y posterior al montaje. Los diagramas, simulaciones, mediciones,
+            modelos CAD y registros de prueba ayudan a tomar mejores decisiones y a justificar por qué
+            se elige una solución.
+          </p>
+          <p>
+            En mi vida académica, esta competencia me permite trabajar de forma más ordenada, dejando
+            evidencia de los procesos realizados y generando material que puede servir para mejorar,
+            corregir o rediseñar un sistema en el futuro.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="back-wrap">
+      <a class="back-btn" href="../">← Volver a Competencias</a>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
